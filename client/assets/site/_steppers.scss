@@ -1,0 +1,20 @@
+
+.no-pointer-events {
+  cursor: default !important;
+}
+
+.no-pointer-events::before {
+  background-color: transparent !important;
+}
+
+.v-application--is-ltr .v-stepper--vertical .v-stepper__content {
+  @media (max-width: 960px) {
+    margin: -8px -36px -16px 0px !important;
+  }
+}
+
+.v-stepper .v-btn {
+  @media (max-width: 960px) {
+    min-width: 100% !important;
+  }
+}

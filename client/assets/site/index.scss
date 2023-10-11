@@ -1,0 +1,50 @@
+@import './_steppers.scss';
+@import './_responsiveInputDetails.scss';
+
+
+html {
+  overflow: auto;
+}
+
+
+.v-progress-linear {
+  width: calc(100% - 16px);
+  margin-left: 8px;
+  height: 2px;
+  border-radius: 2px;
+}
+
+.v-menu__content {
+  z-index: 150 !important;
+}
+
+.page-title, .page-subtitle, .card-title {
+  font-family: Asap, Roboto, sans-serif;
+}
+
+.page-title {
+  padding-top: 1rem;
+  line-height: 36px;
+}
+
+.page-subtitle {
+  font-weight: 500;
+  padding-bottom: 2rem;
+}
+
+.card-title {
+  font-weight: 500;
+  padding-bottom: 1rem;
+}
+
+.text-app-azul-escuro {
+  color: #003641;
+}
+
+.text-app-turquesa {
+  color: #1fa090;
+}
+
+.v-btn {
+  text-transform: none !important;
+}

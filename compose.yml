@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  webapp:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    container_name: app-losekann
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/var/www/client/
+      - ./data:/var/www/data
+    stdin_open: true
+    tty: true

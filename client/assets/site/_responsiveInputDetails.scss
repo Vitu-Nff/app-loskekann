@@ -1,0 +1,11 @@
+.responsive-input .v-messages__wrapper:empty {
+  display: none;
+}
+
+.responsive-input .v-text-field__details,
+.responsive-input .v-messages {
+    margin-bottom: 0px !important;
+    min-height: 12px !important;
+    height: fit-content !important;
+    min-height: 0px !important;
+}

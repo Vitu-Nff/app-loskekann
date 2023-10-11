@@ -1,0 +1,7 @@
+{
+    // Remove os pontos e vírgulas no final de uma instrução
+    "semi": false, // Utiliza apenas aspas simples
+    "singleQuote": true, // Indentação padrão será por 2 tabs
+    "tabWidth": 2, // Remove a vírgula no final de um objeto
+    "trailingComma": "none"
+}
