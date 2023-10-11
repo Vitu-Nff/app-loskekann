@@ -102,15 +102,15 @@ export default {
   },
 
   proxy: {
-    '/api/': {
-      target: process.env.API_URL,
-      pathRewrite: { '^/api/': '' }
-    }
+    // '/api/': {
+    //   target: process.env.API_URL,
+    //   pathRewrite: { '^/api/': '' }
+    // }
   },
 
   googleFonts: {
     families: {
-      Montserrat: true,
+      Montserrat: [100, 200, 300, 400, 500, 600, 700, 800],
       'Libre+Baskerville': true,
       'Cormorant+Garamond': true
     }
@@ -118,6 +118,7 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
+    treeShake: false,
     defaultAssets: {
       font: {
         family: 'Montserrat'
@@ -130,15 +131,15 @@ export default {
       themes: {
         light: {
           primary: '#323232',
-          appCinza: '#EAEAEC',
-          appBranco: '#FFFFFF',
-          appLaranja: '#dc7808',
-          appTurquesa: '#00A194',
-          appVerdeMedio: '#76b72a',
-          appVerdeClaro: '#c7d300',
-          appVerdeEscuro: '#00353e',
-          appRoxo: '#4c3c8f',
-          appVermelho: '#E03E3E'
+          'app-cinza': '#EAEAEC',
+          'app-branco': '#FFFFFF',
+          'app-laranja': '#dc7808',
+          'app-turquesa': '#00A194',
+          'app-verde-medio': '#76b72a',
+          'app-verde-claro': '#c7d300',
+          'app-verde-escuro': '#00353e',
+          'app-roxo': '#4c3c8f',
+          'app-vermelho': '#E03E3E'
         }
       }
     }

@@ -1,15 +1,17 @@
 <template>
-  <v-app style="background: #fff; position: relative; z-index: 99999999999999999999">
-    <Header />
-    <v-main>
-      <TplsSnackBar />
-      <div>
-        <Nuxt />
-      </div>
-      <LocalStorageAgreement />
-      <LoadingOverlay />
-      <SweetAlert />
-    </v-main>
+  <v-app style="background:#eaeaec; position: relative; z-index: 99999999999999999999">
+    <div class="px-md-10 px-4">
+      <Header />
+      <v-main>
+        <TplsSnackBar />
+        <div>
+          <Nuxt />
+        </div>
+        <LocalStorageAgreement />
+        <LoadingOverlay />
+        <SweetAlert />
+      </v-main>
+    </div>
   </v-app>
 </template>
 
