@@ -80,7 +80,7 @@ export default {
 }
 
 .custom-input .v-select__selections span, .custom-input label {
-  font-family: Proza Libre, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 500;

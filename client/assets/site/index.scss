@@ -7,11 +7,17 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  &.destaque {
+    font-family: 'Libre+Baskerville', serif;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Cormorant Garamond', serif;
 }
 
 body, p, span, div, li, a, button, input, textarea, select, label {
-    font-family: 'Proza Libre', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .v-progress-linear {

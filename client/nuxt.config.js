@@ -110,8 +110,9 @@ export default {
 
   googleFonts: {
     families: {
-      'Cormorant+Garamond': true,
-      'Proza+Libre': true
+      Montserrat: true,
+      'Libre+Baskerville': true,
+      'Cormorant+Garamond': true
     }
   },
 
@@ -119,7 +120,7 @@ export default {
   vuetify: {
     defaultAssets: {
       font: {
-        family: 'Proza Libre'
+        family: 'Montserrat'
       }
       //     icons: false
     },
