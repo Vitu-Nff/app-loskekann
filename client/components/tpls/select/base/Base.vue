@@ -24,20 +24,20 @@
     @blur="$emit('blur')"
     @input="updateValue"
   >
-    <template v-show="!loadLinear" #progress>
+    <template v-if="!loadLinear" #progress>
       <v-progress-circular
         class="align-self-center ml-5"
         indeterminate
         color="primary"
       />
     </template>
-    <template v-show="multiple" #selection="{ item, index }">
+    <template v-if="multiple" #selection="{ item, index }">
       <span v-show="index === 0">
         {{ idSelecionado.length > 1 ? idSelecionado.length == items.length ? 'Qualquer ' + label : idSelecionado.length + ' selecionados' : item[itemText] }}
       </span>
     </template>
 
-    <template v-show="multiple" #prepend-item>
+    <template v-if="multiple" #prepend-item>
       <v-list-item
         ripple
         @mousedown.prevent
@@ -80,7 +80,7 @@ export default {
 }
 
 .custom-input .v-select__selections span, .custom-input label {
-  font-family: Roboto;
+  font-family: Proza Libre, sans-serif;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 500;

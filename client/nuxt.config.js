@@ -51,6 +51,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
+    '@nuxtjs/google-fonts'
     // '@nuxtjs/google-gtag'
   ],
 
@@ -107,11 +108,18 @@ export default {
     }
   },
 
+  googleFonts: {
+    families: {
+      'Cormorant+Garamond': true,
+      'Proza+Libre': true
+    }
+  },
+
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     defaultAssets: {
       font: {
-        family: 'Roboto'
+        family: 'Proza Libre'
       }
       //     icons: false
     },
@@ -121,13 +129,15 @@ export default {
       themes: {
         light: {
           primary: '#A031B2',
+          appPreto: '#323232',
+          appCinza: '#EAEAEC',
+          appBranco: '#FFFFFF',
           appLaranja: '#dc7808',
           appTurquesa: '#00A194',
           appVerdeMedio: '#76b72a',
           appVerdeClaro: '#c7d300',
           appVerdeEscuro: '#00353e',
           appRoxo: '#4c3c8f',
-          appCinza: '#a1a1a1',
           appVermelho: '#E03E3E',
           bgColor: '#f1f1f1'
         }
