@@ -128,8 +128,7 @@ export default {
       dark: false,
       themes: {
         light: {
-          primary: '#A031B2',
-          appPreto: '#323232',
+          primary: '#323232',
           appCinza: '#EAEAEC',
           appBranco: '#FFFFFF',
           appLaranja: '#dc7808',
@@ -138,8 +137,7 @@ export default {
           appVerdeClaro: '#c7d300',
           appVerdeEscuro: '#00353e',
           appRoxo: '#4c3c8f',
-          appVermelho: '#E03E3E',
-          bgColor: '#f1f1f1'
+          appVermelho: '#E03E3E'
         }
       }
     }
