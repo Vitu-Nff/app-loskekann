@@ -111,7 +111,7 @@ export default {
   googleFonts: {
     families: {
       Montserrat: [100, 200, 300, 400, 500, 600, 700, 800],
-      'Libre+Baskerville': true,
+      'Libre+Baskerville': [300, 400, 500, 600, 700],
       'Cormorant+Garamond': true
     }
   },

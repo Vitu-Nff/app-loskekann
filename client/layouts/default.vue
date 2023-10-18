@@ -1,6 +1,6 @@
 <template>
   <v-app style="background:#eaeaec; position: relative; z-index: 99999999999999999999">
-    <div class="px-md-10 px-4">
+    <div class="px-2 px-md-8 px-lg-16pb-16">
       <Header />
       <v-main>
         <TplsSnackBar />
