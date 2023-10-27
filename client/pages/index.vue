@@ -5,44 +5,41 @@
       subtitle="“Temos o mundo para cobrir.”"
       image="/img/marcos_bw.png"
     />
-    <v-container class="rounded-container app-branco mb-12">
-      <v-row class="px-4 py-16 px-md-16">
-        <v-col
-          cols="12"
-          md="6"
-          align-self="center"
-          class="py-16 px-0 px-md-8"
-        >
-          <article>
-            <h6 class="article-theme">
-              Internacional
-            </h6>
-            <h2 class="article-headline">
-              Risco & Paixão: A Jornada de Marcos Losekann, de Londres à Israel.
-            </h2>
-            <p class="article-subtitle">
-              Ser correspondente é uma fase importante na vida do repórter, do ponto de vista da grandiosidade do que se faz. Temos o mundo para cobrir.
-            </p>
-            <p class="article-location">
-              Israel
-            </p>
-          </article>
-          <nav>
-            <button>Example</button>
-            <button>Example</button>
-          </nav>
-        </v-col>
-        <v-col
-          cols="12"
-          md="6"
-          class="d-flex justify-center align-center"
-          style="position: relative; min-height: 450px;"
-        >
-          <div class="d-flex justify-center mt-n16" style="position: relative; width: 100%; height: 100%;">
-            <img style="position: absolute; object-fit: contain; object-position: center top; scale: 2; transform-origin: center top;" width="75%" height="100%" :src="$baseUrl + '/img/articles/israel.png'">
+    <ArticleCard
+      tema="Internacional"
+      titulo="Risco & Paixão: A Jornada de Marcos Losekann, de Londres à Israel."
+      texto="Ser correspondente é uma fase importante na vida do repórter, do ponto de vista da grandiosidade do que se faz. Temos o mundo para cobrir."
+      local="Israel"
+      imagem="/img/articles/israel.png"
+    >
+      <template #acoes>
+        <button>Example 1</button>
+        <button>Example 2</button>
+      </template>
+    </ArticleCard>
+    <v-container>
+      <div class="grid-container">
+        <div class="grid-item yellow-grid">
+          <div class="d-flex justify-center align-center rounded-container app-branco" style="width: 100%; height: 100%;">
+            Conteúdo 01
           </div>
-        </v-col>
-      </v-row>
+        </div>
+        <div class="d-flex justify-center align-center grid-item green-grid">
+          <div class="rounded-container app-branco" style="width: 100%; height: 100%;">
+            Conteúdo 02
+          </div>
+        </div>
+        <div class="d-flex justify-center align-center grid-item blue-grid">
+          <div class="rounded-container app-branco" style="width: 100%; height: 100%;">
+            Conteúdo 03
+          </div>
+        </div>
+        <div class="d-flex justify-center align-center grid-item purple-grid">
+          <div class="rounded-container app-branco" style="width: 100%; height: 100%;">
+            Conteúdo 04
+          </div>
+        </div>
+      </div>
     </v-container>
   </main>
 </template>
@@ -51,6 +48,7 @@
 
 import loading from '~/plugins/mixin/loading'
 import Hero from '~/components/site/Hero.vue'
+import ArticleCard from '~/components/site/ArticleCardHome.vue'
 
 export default {
 
@@ -58,7 +56,8 @@ export default {
   auth: false,
 
   components: {
-    Hero
+    Hero,
+    ArticleCard
   },
   mixins: [loading],
 
@@ -83,46 +82,52 @@ export default {
 </script>
 
 <style scoped>
-.article-theme {
-  color: #868686;
-  font-family: Montserrat;
-  font-size: 1.33969rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 100%;
-  text-transform: uppercase;
-  padding-bottom: 8px;
+/* Estilos gerais */
+.grid-container {
+  display: grid;
+  gap: 10px;
+  min-height: 600px;
 }
 
-.article-headline {
-  color: #323232;
-  font-family: Libre Baskerville;
-  font-size: 1.96488rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 115%;
-  padding-bottom: 16px;
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  /* border: 1px solid #ccc; */
 }
 
-.article-subtitle {
-  color: #868686;
-  font-family: Montserrat;
-  font-size: 1.33969rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 140%;
-  min-height: 140px;
-  padding-bottom: 16px;
+/* Layout Desktop */
+.grid-container {
+  grid-template-areas:
+    "yellow yellow yellow green green green"
+    "yellow yellow yellow green green green"
+    "yellow yellow yellow blue blue purple";
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
-.article-location {
-  color: #868686;
-  font-family: Montserrat;
-  font-size: 1.07175rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 149.1%;
-  text-transform: uppercase;
+.yellow-grid { grid-area: yellow; } /* background-color: yellow; } */
+.green-grid  { grid-area: green; }  /* background-color: green; }*/
+.blue-grid   { grid-area: blue; } /* background-color: blue; }*/
+.purple-grid { grid-area: purple; } /* background-color: purple; }*/
+
+/* Layout Tablet & Mobile */
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-areas:
+      "yellow yellow yellow yellow"
+      "yellow yellow yellow yellow"
+      "yellow yellow yellow yellow"
+      "yellow yellow yellow yellow"
+      "green green green green"
+      "green green green green"
+      "green green green green"
+      "blue blue purple purple"
+      "blue blue purple purple";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+  }
 }
 
 </style>
