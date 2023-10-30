@@ -10,37 +10,31 @@
       titulo="Risco & Paixão: A Jornada de Marcos Losekann, de Londres à Israel."
       texto="Ser correspondente é uma fase importante na vida do repórter, do ponto de vista da grandiosidade do que se faz. Temos o mundo para cobrir."
       local="Israel"
-      imagem="/img/articles/israel.png"
+      :imagem="$baseUrl + '/img/articles/israel.png'"
     >
       <template #acoes>
         <button>Example 1</button>
         <button>Example 2</button>
       </template>
     </ArticleCard>
-    <v-container>
-      <div class="grid-container">
-        <div class="grid-item yellow-grid">
-          <div class="d-flex justify-center align-center rounded-container app-branco" style="width: 100%; height: 100%;">
-            Conteúdo 01
-          </div>
-        </div>
-        <div class="d-flex justify-center align-center grid-item green-grid">
-          <div class="rounded-container app-branco" style="width: 100%; height: 100%;">
-            Conteúdo 02
-          </div>
-        </div>
-        <div class="d-flex justify-center align-center grid-item blue-grid">
-          <div class="rounded-container app-branco" style="width: 100%; height: 100%;">
-            Conteúdo 03
-          </div>
-        </div>
-        <div class="d-flex justify-center align-center grid-item purple-grid">
-          <div class="rounded-container app-branco" style="width: 100%; height: 100%;">
-            Conteúdo 04
-          </div>
-        </div>
-      </div>
-    </v-container>
+    <ArticleHeader
+      local="Israel"
+      texto-local="Temos<br>o mundo<br><span style='opacity: 0.75'>para cobrir</span>"
+      :imagem-inicial="$baseUrl + '/img/articles/israel.png'"
+      :imagem-local="$baseUrl + '/img/maps/israel_map.png'"
+      :imagem2="$baseUrl + '/img/articles/bullet.png'"
+      :imagem3="$baseUrl + '/img/articles/helmet.png'"
+      light
+    />
+    <ArticleBody
+      tema="INTERNACIONAL"
+      headline="Risco & Paixão: A Jornada de Marcos Losekann,"
+      subtitulo="Ser correspondente é uma fase importante na vida do repórter, do ponto de vista da grandiosidade do que se faz. Temos o mundo para cobrir."
+      localizacao="ISRAEL"
+      periodo="2006 - 2011"
+      epoca="Correspondente"
+      conteudo="Lorem ipsum ... (seu conteúdo aqui) ..."
+    />
   </main>
 </template>
 
@@ -49,6 +43,8 @@
 import loading from '~/plugins/mixin/loading'
 import Hero from '~/components/site/Hero.vue'
 import ArticleCard from '~/components/site/ArticleCardHome.vue'
+import ArticleHeader from '~/components/site/ArticleHeader.vue'
+import ArticleBody from '~/components/site/ArticleBody.vue'
 
 export default {
 
@@ -57,7 +53,9 @@ export default {
 
   components: {
     Hero,
-    ArticleCard
+    ArticleCard,
+    ArticleHeader,
+    ArticleBody
   },
   mixins: [loading],
 
@@ -82,52 +80,9 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos gerais */
-.grid-container {
-  display: grid;
-  gap: 10px;
-  min-height: 600px;
-}
 
-.grid-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px;
-  /* border: 1px solid #ccc; */
-}
+</style>
 
-/* Layout Desktop */
-.grid-container {
-  grid-template-areas:
-    "yellow yellow yellow green green green"
-    "yellow yellow yellow green green green"
-    "yellow yellow yellow blue blue purple";
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-}
-
-.yellow-grid { grid-area: yellow; } /* background-color: yellow; } */
-.green-grid  { grid-area: green; }  /* background-color: green; }*/
-.blue-grid   { grid-area: blue; } /* background-color: blue; }*/
-.purple-grid { grid-area: purple; } /* background-color: purple; }*/
-
-/* Layout Tablet & Mobile */
-@media (max-width: 1024px) {
-  .grid-container {
-    grid-template-areas:
-      "yellow yellow yellow yellow"
-      "yellow yellow yellow yellow"
-      "yellow yellow yellow yellow"
-      "yellow yellow yellow yellow"
-      "green green green green"
-      "green green green green"
-      "green green green green"
-      "blue blue purple purple"
-      "blue blue purple purple";
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-  }
-}
+<style>
 
 </style>
