@@ -127,8 +127,9 @@ export default {
 @keyframes fadeUp {
     0% {
         opacity: 0;
+        transform: translateY(25px);
     }
-    5% {
+    15% {
         opacity: 0;
         transform: translateY(25px);
     }

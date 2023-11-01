@@ -2,29 +2,29 @@
 <template>
   <v-container>
     <div class="article-container">
-      <div class="header">
-        <p class="theme mb-1">
+      <div class="header py-12">
+        <p class="theme mb-1 fade-up">
           {{ tema }}
         </p>
-        <h2 class="headline-title libre mb-1">
+        <h2 class="headline-title libre fade-up mb-1">
           {{ headline }}
         </h2>
-        <p class="subtitle mb-4">
+        <p class="subtitle mb-4 fade-up">
           {{ subtitulo }}
         </p>
-        <p class="location">
+        <p class="location fade-up">
           {{ localizacao }}
         </p>
       </div>
-      <div class="sidebar">
-        <p class="period">
+      <div class="sidebar py-12">
+        <p class="period fade-up">
           {{ periodo }}
         </p>
-        <p class="epoch">
-          {{ epoca }}
+        <p class="epoch fade-up">
+          {{ cargo }}
         </p>
       </div>
-      <div class="content" v-html="conteudo" />
+      <div class="content fade-up" v-html="conteudo" />
     </div>
   </v-container>
 </template>
@@ -52,7 +52,7 @@ export default {
       type: String,
       required: true
     },
-    epoca: {
+    cargo: {
       type: String,
       required: true
     },
@@ -158,4 +158,24 @@ export default {
     line-height: 140%; /* 2.1rem */
   }
 }
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    15% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    35% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-up {
+    animation: fadeUp forwards;
+    animation-timeline: view();
+}
+
 </style>

@@ -1,13 +1,14 @@
 <template>
-  <v-app style="background:#eaeaec; position: relative; z-index: 99999999999999999999">
-    <div class="px-2 px-md-8 px-lg-16pb-16">
+  <v-app :style="{ backgroundColor: page?.light ?? false ? 'white' : '#eaeaec' }" style="position: relative; z-index: 99">
+    <div class="px-2 px-md-8 px-lg-16 pb-16">
       <Header />
-      <v-main>
+      <v-main class="pb-16">
         <TplsSnackBar />
-        <div>
-          <Nuxt />
+        <div class="pb-16">
+          <transition name="fade">
+            <Nuxt />
+          </transition>
         </div>
-        <LocalStorageAgreement />
         <LoadingOverlay />
         <SweetAlert />
       </v-main>
@@ -20,36 +21,34 @@ import LoadingOverlay from '~/components/tpls/LoadingOverlay'
 import SweetAlert from '~/components/tpls/modal/Alerta'
 
 import Header from '~/components/site/Header.vue'
-import LocalStorageAgreement from '~/components/LocalStorageAgreement.vue'
 
 export default {
   name: 'DefaultLayout',
   components: {
-    LocalStorageAgreement,
     Header,
     LoadingOverlay,
     SweetAlert
   },
-  created () {
-    if (process.client) {
-      this.$store.dispatch('favoritos/loadFavoritos')
-      this.$store.dispatch('regioes/loadRegioes')
-      this.$store.dispatch('propriedades/buscarPropriedades')
+
+  computed: {
+    page () {
+      return this.$nuxt.$route.matched[0].instances.default
     }
   },
+
   destroyed () {
     this.$nuxt.$off('set-menu')
   },
-  mounted () {
-    window.addEventListener('load', this.onPageLoad)
-  },
-  beforeDestroy () {
-    window.removeEventListener('load', this.onPageLoad)
-  },
+  // mounted () {
+  //   window.addEventListener('load', this.onPageLoad)
+  // },
+  // beforeDestroy () {
+  //   window.removeEventListener('load', this.onPageLoad)
+  // },
   methods: {
-    onPageLoad () {
-      this.$store.commit('SET_LOADING', false)
-    },
+    // onPageLoad () {
+    //   this.$store.commit('SET_LOADING', false)
+    // },
     setTitle (titulo) {
       this.tituloPagina = titulo
     }

@@ -6,7 +6,6 @@
 
 html {
   overflow: auto;
-  background-color: #eaeaec;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -65,4 +64,11 @@ body, p, span, div, li, a, button, input, textarea, select, label {
 
 .v-btn {
   text-transform: none !important;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0;
 }

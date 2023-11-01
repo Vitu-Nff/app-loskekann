@@ -1,0 +1,15 @@
+{
+  "id": 1,
+  "tema": "INTERNACIONAL",
+  "titulo": "Risco & Paixão: A Jornada de Marcos Losekann,",
+  "subtitulo": "Ser correspondente é uma fase importante na vida do repórter, do ponto de vista da grandiosidade do que se faz. Temos o mundo para cobrir.",
+  "local": "Israel",
+  "txt-local": "Temos<br>o mundo<br><span style='opacity: 0.75'>para cobrir</span>",
+  "epoca": "2006 - 2011",
+  "cargo": "Correspondente",
+  "content": "Conteúdo do artigo aqui...",
+  "imagem": "/img/articles/israel.png",
+  "imagem-local": "/img/maps/israel_map.png",
+  "imagem-2": "/img/articles/bullet.png",
+  "imagem-3": "/img/articles/helmet.png"
+}

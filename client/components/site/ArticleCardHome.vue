@@ -80,7 +80,7 @@ export default {
         opacity: 0;
         transform: translateY(150px) rotate(-15deg);
     }
-    10% {
+    15% {
         opacity: 0;
         transform: translateY(150px) rotate(-15deg);
     }
@@ -93,8 +93,9 @@ export default {
 @keyframes fadeUp {
     0% {
         opacity: 0;
+        transform: translateY(50px);
     }
-    5% {
+    15% {
         opacity: 0;
         transform: translateY(50px);
     }
